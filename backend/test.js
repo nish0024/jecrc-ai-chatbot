@@ -9,14 +9,14 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-rl.question("Ask something about JECRC: ", function(userQuery) {
+function getCleanedFiles() {
+  return fs.readdirSync(folderPath);
+}
 
-  const query = userQuery.toLowerCase();
-  const queryWords = query.split(" ");
-
-  const files = fs.readdirSync(folderPath);
-
+function searchFiles(queryWords) {
   let results = [];
+
+  const files = getCleanedFiles();
 
   files.forEach(file => {
     const filePath = path.join(folderPath, file);
@@ -26,30 +26,26 @@ rl.question("Ask something about JECRC: ", function(userQuery) {
     lines.forEach(line => {
       const lowerLine = line.toLowerCase();
 
-      const isMatch = queryWords.some(word =>
+      const score = queryWords.filter(word =>
         lowerLine.includes(word)
-      );
+      ).length;
 
-     if (isMatch) {
-  const score = queryWords.filter(word =>
-    lowerLine.includes(word)
-  ).length;
-
-  results.push({
-    file: file,
-    text: line.trim(),
-    score: score
-  });
-}
+      if (score > 0) {
+        results.push({
+          file: file,
+          text: line.trim(),
+          score: score
+        });
+      }
     });
   });
 
-  console.log("\n🤖 JECRCGPT:\n");
+  return results;
+}
 
-if (results.length > 0) {
-  results.sort((a, b) => b.score - a.score);
-
-  const cleanResults = results
+function cleanResults(results) {
+  return results
+    .sort((a, b) => b.score - a.score)
     .map(r => r.text)
     .filter(line =>
       line.length > 40 &&
@@ -57,8 +53,12 @@ if (results.length > 0) {
       !line.includes("|") &&
       !line.includes("##")
     );
+}
 
-  const unique = [...new Set(cleanResults)];
+function showAnswer(results) {
+  console.log("\n🤖 JECRCGPT:\n");
+
+  const unique = [...new Set(cleanResults(results))];
   const topResults = unique.slice(0, 3);
 
   if (topResults.length > 0) {
@@ -70,15 +70,17 @@ if (results.length > 0) {
 
     console.log("\nPlease verify important details from the official university source.");
   } else {
-    console.log("I found some related data, but it is not clean enough to show confidently.");
-    console.log("I’m still being improved and my knowledge base is being refined.");
+    console.log("Sorry, I don’t have enough information on this topic yet.");
+    console.log("I’m still being trained and improving every day.");
+    console.log("Try asking about courses, admissions, hostel, or fees 😊");
   }
-
-} else {
-  console.log("Sorry, I don’t have enough information on this topic yet.");
-  console.log("I’m still being trained and improving every day.");
-  console.log("Try asking about courses, admissions, hostel, or fees. 😊");
 }
 
-rl.close();
+rl.question("Ask something about JECRC: ", function(userQuery) {
+  const queryWords = userQuery.toLowerCase().split(" ");
+  const results = searchFiles(queryWords);
+
+  showAnswer(results);
+
+  rl.close();
 });
