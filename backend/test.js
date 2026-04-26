@@ -2,10 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const readline = require('readline');
 
-// folder containing all cleaned files
 const folderPath = 'data/cleaned';
 
-// user query
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
@@ -14,8 +12,8 @@ const rl = readline.createInterface({
 rl.question("Ask something about JECRC: ", function(userQuery) {
 
   const query = userQuery.toLowerCase();
+  const queryWords = query.split(" ");
 
-  const folderPath = 'data/cleaned';
   const files = fs.readdirSync(folderPath);
 
   let results = [];
@@ -26,26 +24,50 @@ rl.question("Ask something about JECRC: ", function(userQuery) {
     const lines = data.split('\n');
 
     lines.forEach(line => {
-      if (line.toLowerCase().includes(query)) {
-        results.push({
-          file: file,
-          text: line
-        });
-      }
+      const lowerLine = line.toLowerCase();
+
+      const isMatch = queryWords.some(word =>
+        lowerLine.includes(word)
+      );
+
+     if (isMatch) {
+  const score = queryWords.filter(word =>
+    lowerLine.includes(word)
+  ).length;
+
+  results.push({
+    file: file,
+    text: line.trim(),
+    score: score
+  });
+}
     });
   });
 
-  if (results.length > 0) {
-    console.log("\nAnswer:\n");
-    console.log("Based on available data:\n");
+  console.log("\n🤖 JECRCGPT:\n");
 
-    results.slice(0, 3).forEach((res, i) => {
-      console.log(`${i + 1}. ${res.text}`);
-      console.log(`Source: ${res.file}\n`);
+  results.sort((a, b) => b.score - a.score);
+  if (results.length > 0) {
+
+    const cleanResults = results
+      .map(r => r.text)
+      .filter(line =>
+        line.length > 40 &&
+        line.length < 220 &&
+        !line.includes("|") &&   // remove tables
+        !line.includes("##")     // remove headings
+      );
+
+    const unique = [...new Set(cleanResults)];
+
+    unique.slice(0, 3).forEach((line, i) => {
+      console.log(`${i + 1}. ${line}\n`);
     });
 
   } else {
-    console.log("\nSorry, I don’t have that info yet.");
+    console.log("Sorry, I don’t have enough information on this topic yet.");
+    console.log("I’m still being trained and improving every day.");
+    console.log("Try asking about courses, admissions, hostel, or fees 😊\n");
   }
 
   rl.close();
