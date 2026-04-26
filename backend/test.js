@@ -5,7 +5,7 @@ const path = require('path');
 const folderPath = 'data/cleaned';
 
 // user query
-const query = "scholarship".toLowerCase();
+const query = "randomxyz".toLowerCase();
 
 const files = fs.readdirSync(folderPath);
 
@@ -29,12 +29,15 @@ files.forEach(file => {
 
 // show top 5 results
 if (results.length > 0) {
-  console.log("Top matches:\n");
+  console.log("Answer:\n");
 
-  results.slice(0, 5).forEach((res, i) => {
-    console.log(`${i + 1}. [${res.file}] ${res.text}`);
+  console.log("Based on the available JECRC University's data, here is what I found:\n");
+
+  results.slice(0, 3).forEach((res, i) => {
+    console.log(`${i + 1}. ${res.text}`);
+    console.log(`Source: ${res.file}\n`);
   });
 
 } else {
-  console.log("No relevant info found");
+  console.log("Sorry, I currently have limited information on this topic. My knowledge base is still being updated.");
 }
