@@ -46,29 +46,39 @@ rl.question("Ask something about JECRC: ", function(userQuery) {
 
   console.log("\n🤖 JECRCGPT:\n");
 
+if (results.length > 0) {
   results.sort((a, b) => b.score - a.score);
-  if (results.length > 0) {
 
-    const cleanResults = results
-      .map(r => r.text)
-      .filter(line =>
-        line.length > 40 &&
-        line.length < 220 &&
-        !line.includes("|") &&   // remove tables
-        !line.includes("##")     // remove headings
-      );
+  const cleanResults = results
+    .map(r => r.text)
+    .filter(line =>
+      line.length > 40 &&
+      line.length < 220 &&
+      !line.includes("|") &&
+      !line.includes("##")
+    );
 
-    const unique = [...new Set(cleanResults)];
+  const unique = [...new Set(cleanResults)];
+  const topResults = unique.slice(0, 3);
 
-    unique.slice(0, 3).forEach((line, i) => {
-      console.log(`${i + 1}. ${line}\n`);
+  if (topResults.length > 0) {
+    console.log("Based on the available JECRC information:\n");
+
+    topResults.forEach(line => {
+      console.log(`- ${line}`);
     });
 
+    console.log("\nPlease verify important details from the official university source.");
   } else {
-    console.log("Sorry, I don’t have enough information on this topic yet.");
-    console.log("I’m still being trained and improving every day.");
-    console.log("Try asking about courses, admissions, hostel, or fees 😊\n");
+    console.log("I found some related data, but it is not clean enough to show confidently.");
+    console.log("I’m still being improved and my knowledge base is being refined.");
   }
 
-  rl.close();
+} else {
+  console.log("Sorry, I don’t have enough information on this topic yet.");
+  console.log("I’m still being trained and improving every day.");
+  console.log("Try asking about courses, admissions, hostel, or fees. 😊");
+}
+
+rl.close();
 });
