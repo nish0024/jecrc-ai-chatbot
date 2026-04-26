@@ -1,13 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const readline = require('readline');
 
 const folderPath = 'data/cleaned';
-
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
 
 function getCleanedFiles() {
   return fs.readdirSync(folderPath);
@@ -32,9 +26,8 @@ function searchFiles(queryWords) {
 
       if (score > 0) {
         results.push({
-          file: file,
           text: line.trim(),
-          score: score
+          score
         });
       }
     });
@@ -55,32 +48,18 @@ function cleanResults(results) {
     );
 }
 
-function showAnswer(results) {
-  console.log("\n🤖 JECRCGPT:\n");
+function getAnswer(query) {
+  const queryWords = query.toLowerCase().split(" ");
+  const results = searchFiles(queryWords);
 
   const unique = [...new Set(cleanResults(results))];
   const topResults = unique.slice(0, 3);
 
   if (topResults.length > 0) {
-    console.log("Based on the available JECRC information:\n");
-
-    topResults.forEach(line => {
-      console.log(`- ${line}`);
-    });
-
-    console.log("\nPlease verify important details from the official university source.");
+    return topResults;
   } else {
-    console.log("Sorry, I don’t have enough information on this topic yet.");
-    console.log("I’m still being trained and improving every day.");
-    console.log("Try asking about courses, admissions, hostel, or fees 😊");
+    return ["Sorry, I don’t have enough information on this topic yet."];
   }
 }
 
-rl.question("Ask something about JECRC: ", function(userQuery) {
-  const queryWords = userQuery.toLowerCase().split(" ");
-  const results = searchFiles(queryWords);
-
-  showAnswer(results);
-
-  rl.close();
-});
+module.exports = { getAnswer };
