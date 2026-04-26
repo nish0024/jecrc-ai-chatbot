@@ -1,0 +1,60 @@
+Based on the university data provided, here is a clean, organized overview of **Student Life and Campus Facilities** at JECRC University, formatted for a RAG (Retrieval-Augmented Generation) chatbot.
+
+---
+
+## **Flagship Events**
+
+### **Rhythm: Techno-Business-Cultural Fest**
+* **Overview:** The university’s premier annual festival and one of North India’s largest, attracting over **25,000 attendees**.
+* **Activities:** Includes 50+ events spanning technology, business, music, arts, and sports.
+* **Highlights:**
+    * **Performances:** Live concerts featuring top national and international DJs.
+    * **Competitions:** High-stakes hackathons, case study challenges, and startup pitch battles.
+    * **Networking:** Interactive sessions with industry experts and entrepreneurs.
+
+### **Wonder of Words (WoW): Literary Fest**
+* **Overview:** A multi-day literary extravaganza featuring globally renowned figures in literature, art, and cinema.
+* **Notable Past Guests:** Mr. Javed Akhtar (Poet/Lyricist), Ms. Manisha Kulshreshtha (Novelist), and various acclaimed shayars and artists.
+* **Key Event:** **'Jashn-e-Alfaz'**, a closing poetic session showcasing national talent.
+
+---
+
+## **Residential Life & Dining**
+
+### **Hostel Accommodation**
+* **Structure:** Apartment-style living with **three private single-occupancy rooms** sharing a common living area.
+* **Amenities:** Each room includes a wardrobe, study table, chair, and Wi-Fi access. AC rooms may include a television in the common area.
+* **Philosophy:** Designed to integrate living and learning, fostering a focused academic environment.
+
+### **Dining & Convenience**
+* **Students' Mess:** A double-storied complex offering multi-cuisine food.
+* **Dining Area:** Centrally air-conditioned with a supporting cafeteria.
+* **On-Campus Shops:** The complex includes convenience stores for daily resident needs.
+
+---
+
+## **Sports & Recreational Facilities**
+
+* **Gymnasium:** Fully equipped facility for health and fitness.
+* **Outdoor Sports:** Dedicated grounds for **Football, Basketball, Volleyball, and Badminton**.
+* **Indoor Sports:** Dedicated facilities for **Table Tennis**.
+* **Competitive Level:** Member of the **Association of Indian Universities (AIU)**; student teams represent the university in national and international tournaments.
+
+---
+
+## **Clubs & Professional Societies**
+
+### **Student Communities**
+* **Techno-Cultural Clubs:** Aimed at nurturing talent in extracurricular fields like drama, music, and technology.
+* **Focus:** Acts as a catalyst for interest-building and provides resources for talent development.
+
+### **Professional Body Chapters**
+The university hosts student chapters of globally recognized professional organizations, including:
+* **Technical:** IEEE (Electronics), ACM (Computing), CSI (Computer Society), ISTE.
+* **Mechanical/Quality:** ASME, ASQ, SAE (Automobile Engineers), ASHRAE.
+* **General Engineering:** IEI (Institute of Engineers).
+
+---
+
+## **Campus Location**
+* **Address:** Plot No. IS-2036 to 2039, Ramchandrapura Industrial Area, Vidhani, Sitapura Extension, Jaipur – 303905, Rajasthan, India.
