@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const folderPath = 'data/cleaned';
+const folderPath = path.join(__dirname, '../data/cleaned');
 
 function getCleanedFiles() {
   return fs.readdirSync(folderPath);
