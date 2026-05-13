@@ -52,6 +52,10 @@ async function getAnswer(query) {
   const unique = [...new Set(cleanResults(results))];
   const topResults = unique.slice(0, 5);
 
+  console.log('Query:', query);
+  console.log('Results found:', topResults.length);
+  console.log('Top results:', topResults);
+
   if (topResults.length === 0) {
     return ["I currently have limited information on this topic. I'm being updated regularly!"];
   }
@@ -70,7 +74,7 @@ Student's question: ${query}
 
 Answer:`;
 
-  const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash-latest' });
+  const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
   const result = await model.generateContent(prompt);
   const response = result.response.text();
 
