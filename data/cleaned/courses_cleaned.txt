@@ -1,85 +1,200 @@
-Academic Schools & Degree Programs
-1. School of Engineering & Technology
-UG (B.Tech): Core branches in Civil, EE, ECE (Semiconductor/Chip Design), and Mechanical (including Electric Vehicles).
 
-B.Tech CSE Specializations: * Industry-Partnered: Gaming Tech, Fintech & AI (PayTM), Software Product Engineering (Kalvium), Artificial Intelligence & Machine Learning (Xebia/Samatrix/IBM), Cyber Security (EC-Council), and Cloud Computing (Microsoft/AWS).
+JECRC University Jaipur offers clearly defined program durations, seat intakes, and rankings that address common student queries during admissions. It's a private self-financed university (established 2012 under Rajasthan Govt Act), not affiliated with Rajasthan University, with English as the primary medium of instruction across all programs. [collegedunia](https://collegedunia.com/news/jecrc-jaipur-fee-structure-2026-released-alertid-149631)
 
-Strategic Aligned: Computer Science and Business Systems (TCS) and Generative AI (L&T EduTech).
+## Program Durations
+Standard durations match industry norms:
 
-PG: M.Tech in CSE, Civil, EE, ECE, and Mechanical.
+- B.Tech: 4 years
+- BCA: 3 years (Pass) or 4 years (Honours)
+- BBA/B.Com/B.Sc/BA/B.Des: 3-4 years
+- MBA/MCA/M.Tech: 2 years
+- Integrated LLB (BA/BBA/B.Sc LLB): 5 years
+- M.Sc/MA/LLM/M.Des: 2 years [collegedunia](https://collegedunia.com/news/jecrc-jaipur-fee-structure-2026-released-alertid-149631)
 
-2. School of Computer Applications
-UG (BCA): 3-Year Pass / 4-Year Honours degrees.
+## Seat Intakes
+Exact 2026 intakes from brochure (B.Tech CSE most sought; totals vary by specialization):
 
-Specializations: Health Informatics, AI & Data Science, Cloud Automation, Cyber Security, and Full Stack Development (IBM/Xebia).
+| Program | Total Seats |
+|---------|-------------|
+| B.Tech CSE | 360  [jecrcuniversity.edu](https://jecrcuniversity.edu.in/wp-content/uploads/2026/04/JU-Information-Brochure-2026-.pdf) |
+| B.Tech other branches | 60-180 each |
+| BCA | 180 |
+| BBA | 240 |
+| MBA | 120 |
+| MCA | 120  [jecrcuniversity.edu](https://jecrcuniversity.edu.in/wp-content/uploads/2026/04/JU-Information-Brochure-2026.pdf)|
 
-PG (MCA): 2-Year programs in General MCA, AI & Data Science, Cyber Security, and Cloud Computing.
+## Rankings and Accreditations
+- **NAAC**: B++ grade (re-accredited 2024).
+- **NIRF 2025**: 55th in Engineering (Private), 151-200 band University overall.
+- **Other**: 94th IIRF 2024; NBA accredited for select B.Tech programs (CSE, ECE, IT, ME confirmed for 2025 cycle). [collegewollege](https://collegewollege.com/university/jecrc-university-ju-jaipur-c10854/rankings)
 
-3. Jaipur School of Business
-UG: BBA (various core specializations) and B.Com (including Capital Markets and International Accreditations).
+## School of Engineering and Technology
 
-Specialized BBA: Fintech (Deloitte/Zell), Global Business (ISDC), and Data Analytics.
+Dean: Prof. (Dr.) Naveen Hemrajani. Email: dean.engineering@jecrcu.edu.in.
 
-PG (MBA): Dual Specialization in core HR/Marketing/Finance.
+B.Tech Core Branches:
+B.Tech Civil Engineering (L&T EduTech).
+B.Tech Electrical and Electronics Engineering (L&T EduTech).
+B.Tech Electronics and Communication Engineering (L&T EduTech).
+B.Tech ECE Semiconductor and Chip Design (Truechip).
+B.Tech Mechanical Engineering (L&T EduTech).
+B.Tech Mechanical Engineering (Electric Vehicles).
 
-Specialized MBA: Applied Finance (Deloitte), AI, Data Analytics, Fintech (Imarticus), and Hospital & Healthcare Management.
+B.Tech CSE Specializations:
+B.Tech CSE General.
+B.Tech CSE Artificial Intelligence and Machine Learning (Xebia).
+B.Tech CSE Artificial Intelligence and Machine Learning (Samatrix.io).
+B.Tech CSE Artificial Intelligence and Machine Learning (IBM).
+B.Tech CSE Artificial Intelligence and Data Science.
+B.Tech CSE Full Stack Web Design and Development (Xebia).
+B.Tech CSE Cloud Computing (Microsoft).
+B.Tech CSE Cloud Computing (AWS Verified Program).
+B.Tech CSE Cyber Security (EC-Council USA).
+B.Tech CSE Computer Science and Business Systems (TCS).
+B.Tech CSE Gaming Technology.
+B.Tech CSE Fintech and AI (PayTM and Zell).
+B.Tech CSE Generative AI (L&T EduTech).
+B.Tech CSE Software Product Engineering (Kalvium).
+B.Tech CSE AI DevOps and Cloud Automation (Employability.Life).
+B.Tech Lateral and Migration entry available.
 
-4. School of Design & Mass Communication
-Jaipur School of Design: * UG: B.Des in Interior, Fashion, Jewellery, Game Art & Animation, and Communication Design.
+PG Engineering:
+M.Tech in CSE, Civil, Electrical Engineering, ECE, Mechanical.
 
-PG: M.Des and M.Sc. in Fashion, Interior, Graphic, and Jewellery Design.
+## School of Computer Applications
 
-Jaipur School of Mass Communication:
+BCA Programs (3-Year Pass or 4-Year Honours):
+BCA General.
+BCA Health Informatics.
+BCA Artificial Intelligence and Data Science.
+BCA Data Science and Data Analytics (Samatrix.io).
+BCA Artificial Intelligence and Machine Learning (IBM).
+BCA Cloud Computing and Full Stack Development (IBM).
+BCA Cyber Security (EC-Council).
+BCA Full Stack Web Design and Development (Xebia).
+BCA Cloud Computing (AWS).
+BCA AI DevOps and Cloud Automation (Employability.Life).
+BCA Sunstone.
 
-UG: B.A. Journalism & Mass Communication (3/4 Years).
+MCA Programs (2 Years):
+MCA General.
+MCA Artificial Intelligence and Data Science.
+MCA Data Science and Data Analytics (Samatrix.io).
+MCA Cloud Computing (AWS).
+MCA Cloud Computing and Full Stack Development (IBM).
+MCA Cyber Security (EC-Council).
+MCA Artificial Intelligence and Machine Learning (Samatrix.io).
+MCA Sunstone.
 
-PG: M.A. in Journalism & Mass Communication and Filmmaking.
+## Jaipur School of Business
 
-5. School of Law
-UG (Integrated): B.A. LL.B (Hons.), B.Sc. LL.B (Hons.), and BBA LL.B (Hons.).
+BBA Programs (3-Year Pass or 4-Year Honours):
+BBA HR, Finance, Marketing, Business Analytics, International Business, IT.
+BBA Fintech (Zell Education and Deloitte).
+BBA Global Business (ISDC).
+BBA Data Analytics and Data Visualization (Samatrix.io).
+BBA Banking Financial Service and Insurance.
+BBA New Age Digital Marketing.
+BBA Sunstone.
 
-PG (LL.M): 2-Year specializations in Business Law, IPR, and Personal Law.
+B.Com Programs:
+B.Com General.
+B.Com Capital Market.
+B.Com International Accreditation (Multiple Specializations).
+B.Com Sunstone.
 
-6. School of Humanities, Economics & Social Sciences
-Humanities: B.A. (Hons.) in English, Political Science, and Psychology.
+MBA Programs (Dual Specialization):
+MBA HR, Marketing, Finance, POM, ITM, EFB, RM, BFSI, SE.
+MBA Applied Finance (Deloitte and Zell).
+MBA Artificial Intelligence (Samatrix.io).
+MBA Data Analytics and Data Visualization (Samatrix.io).
+MBA Fintech (Imarticus).
+MBA Global Finance and AI (Imarticus).
+MBA International Accreditation (ISDC).
+MBA Sunstone.
+MBA Hospital and Healthcare Management.
 
-Liberal Studies: Majors in International Relations, Public Policy, Linguistics, and Family Business.
+## Jaipur School of Design
 
-Economics: B.A. (Hons.) and M.A. in Economics.
+B.Des Programs (3-Year Pass or 4-Year Honours):
+B.Des Interior Design.
+B.Des Fashion Design.
+B.Des Jewellery Design and Manufacturing.
+B.Des Game Art and Animation.
+B.Des Communication Design (ISDC).
+Bachelor of Visual Arts (BVA).
 
-PG: M.A. in Public Policy, Psychology (Clinical), and International Relations.
+PG Design Programs:
+M.Des Interior Design.
+M.Des Fashion Design.
+M.Sc Interior Design.
+M.Sc Fashion Design.
+M.Sc Jewellery Design.
+M.Sc Graphic Design.
 
-7. School of Sciences & Allied Health
-Sciences: B.Sc. (Hons.) and M.Sc. in Forensic Science, Biotechnology, and Microbiology. Core M.Sc. in Physics, Chemistry, Mathematics, Botany, and Zoology.
+## Jaipur School of Mass Communication
 
-Allied Health: M.Sc. in Clinical Embryology (Indira IVF) and MPT (Sports, Ortho, Neuro, Cardio).
+BA Journalism and Mass Communication (3-Year Pass or 4-Year Honours).
+MA Journalism and Mass Communication.
+MA Filmmaking.
 
-Hospitality: B.Sc. in Hospitality and Hotel Management (HHM).
+## School of Law
 
-Doctoral Research (Ph.D.)
-The University offers research programs across all major domains:
+BA LLB Honours (5 Years).
+B.Sc LLB Honours (5 Years).
+BBA LLB Honours (5 Years).
+LLM Business Law (2 Years).
+LLM Intellectual Property Rights (2 Years).
+LLM Personal Law (2 Years).
+Bar Council of India approved. Maximum 60 students per section.
 
-Engineering & Technology
+## School of Humanities and Social Sciences
 
-Sciences
+BA Honours English (3-Year Pass or 4-Year Honours).
+BA Honours Political Science.
+BA Honours Psychology.
+BA Liberal Studies with Major in International Relations and Diplomacy.
+BA Liberal Studies with Major in Public Policy and Governance.
+BA Liberal Studies with Major in Entrepreneurship and Family Business.
+BA Liberal Studies with Major in Linguistics.
+MA Public Policy and Governance.
+MA English.
+MA Psychology (Clinical).
+MA Political Science.
+MA International Relations.
 
-Business Studies
+## Jaipur School of Economics
 
-Humanities & Social Sciences
+BA Honours Economics (3-Year Pass or 4-Year Honours).
+MA Economics.
 
-Law
+## School of Sciences
 
-Design
+B.Sc Honours Forensic Science (4 Years).
+B.Sc Forensic Science (3 Years).
+B.Sc Honours Biotechnology (3-Year Pass or 4-Year Honours).
+B.Sc Honours Microbiology (3-Year Pass or 4-Year Honours).
+M.Sc Physics, Chemistry, Mathematics, Botany, Zoology, Statistics, Biotechnology, Microbiology.
 
-Mass Communication
+## School of Allied Health Sciences
 
-Computer Applications
+M.Sc Clinical Embryology (Indira IVF).
+Master of Physiotherapy (MPT) in Sports, Orthopaedics, Neurology, Cardiopulmonary.
 
-Global & Industry Partners
-Programs are enhanced through collaborations with:
+## School of Hospitality
 
-Tech Leaders: Microsoft, AWS, IBM, TCS, Google Cloud.
+B.Sc Hospitality and Hotel Management (3 Years).
 
-Professional Bodies: EC-Council (Cyber Security), Zell/Deloitte (Finance), L&T EduTech (Engineering).
+## PhD Programs
 
-Innovative Platforms: Kalvium (Software), Samatrix.io (AI), and Sunstone.
+Ph.D. available in: Engineering and Technology, Sciences, Business Studies,
+Humanities and Social Sciences, Law, Design, Mass Communication, Computer Applications.
+284+ active PhD scholars. 100+ PhD degrees awarded (2016-2024).
+PhD scholarship: Rs. 20,000 per year. Duration: 3 years minimum.
+Eligibility: 75% or above in PG degree.
+
+## Key Industry Partners for Programs
+
+Microsoft, AWS, IBM, TCS, Google Cloud, EC-Council, Xebia, Samatrix.io,
+L&T EduTech, Kalvium, Zell Education, Deloitte, Imarticus, Truechip,
+Sunstone, ISDC, PayTM.

@@ -1,60 +1,163 @@
-Based on the university data provided, here is a clean, organized overview of **Student Life and Campus Facilities** at JECRC University, formatted for a RAG (Retrieval-Augmented Generation) chatbot.
+## Student Societies
 
----
+MUN Society (JMS): Student-run group fostering diplomacy skills via Model UN simulations.
+Hosts Jaipur's largest MUN conference annually (typically in May).
+Join via campus interest forms or website. Weekly meetings for preparation.
 
-## **Flagship Events**
+NSS: National Service Scheme active on campus. Focuses on community service.
+Contact student affairs office for enrollment details.
 
-### **Rhythm: Techno-Business-Cultural Fest**
-* **Overview:** The university’s premier annual festival and one of North India’s largest, attracting over **25,000 attendees**.
-* **Activities:** Includes 50+ events spanning technology, business, music, arts, and sports.
-* **Highlights:**
-    * **Performances:** Live concerts featuring top national and international DJs.
-    * **Competitions:** High-stakes hackathons, case study challenges, and startup pitch battles.
-    * **Networking:** Interactive sessions with industry experts and entrepreneurs.
+NCC: National Cadet Corps unit active on campus.
+Contact: registrar@jecrcu.edu.in for unit number and enrollment details.
 
-### **Wonder of Words (WoW): Literary Fest**
-* **Overview:** A multi-day literary extravaganza featuring globally renowned figures in literature, art, and cinema.
-* **Notable Past Guests:** Mr. Javed Akhtar (Poet/Lyricist), Ms. Manisha Kulshreshtha (Novelist), and various acclaimed shayars and artists.
-* **Key Event:** **'Jashn-e-Alfaz'**, a closing poetic session showcasing national talent.
+## Cultural Clubs (11+ Techno-Cultural Clubs)
 
----
+Catchy Cultural Club.
+Abhivyakti (Theatre Club).
+The Vogue (Fashion Club).
+Literature Club.
+Makerspace Club.
+Master Chef Club.
+Maverick Club.
+Quintessence Crew (Dance Club).
+Swaraag (Music Club).
+TERRA Club.
+Abhyudaya Zarurat (Social Service Club).
+Join via department notices or students page on jecrcuniversity.edu.in.
 
-## **Residential Life & Dining**
+## Coding Ecosystem at JU
 
-### **Hostel Accommodation**
-* **Structure:** Apartment-style living with **three private single-occupancy rooms** sharing a common living area.
-* **Amenities:** Each room includes a wardrobe, study table, chair, and Wi-Fi access. AC rooms may include a television in the common area.
-* **Philosophy:** Designed to integrate living and learning, fostering a focused academic environment.
+Run by Department of CSE to build competitive coding culture.
+Monthly events: CodeAthon (competitive coding) and Quizathon.
+Open to all students via club registration.
+Focus: Building passion for coding contests and external competition preparation.
 
-### **Dining & Convenience**
-* **Students' Mess:** A double-storied complex offering multi-cuisine food.
-* **Dining Area:** Centrally air-conditioned with a supporting cafeteria.
-* **On-Campus Shops:** The complex includes convenience stores for daily resident needs.
+## Campus Policies
 
----
+Dress Code: No strict uniform. Neat and formal attire expected during classes and events.
 
-## **Sports & Recreational Facilities**
+Library Timings: 9 AM to 9 PM daily (12 hours). Extended access available for researchers.
 
-* **Gymnasium:** Fully equipped facility for health and fitness.
-* **Outdoor Sports:** Dedicated grounds for **Football, Basketball, Volleyball, and Badminton**.
-* **Indoor Sports:** Dedicated facilities for **Table Tennis**.
-* **Competitive Level:** Member of the **Association of Indian Universities (AIU)**; student teams represent the university in national and international tournaments.
+Wi-Fi: Free campus-wide Wi-Fi for all students. Login via student portal. Fair usage limits apply.
 
----
+Campus Timings: Opens 8 AM for day scholars. Gates close at 6 PM.
+Hostellers have separate access beyond 6 PM.
 
-## **Clubs & Professional Societies**
+## Flagship Events
 
-### **Student Communities**
-* **Techno-Cultural Clubs:** Aimed at nurturing talent in extracurricular fields like drama, music, and technology.
-* **Focus:** Acts as a catalyst for interest-building and provides resources for talent development.
+Rhythm Fest: Premier annual techno-business-cultural festival. 
+One of North India's largest fests with 25,000+ attendees and 50+ events.
+Includes live concerts, hackathons, case study challenges, startup pitch battles, 
+and networking sessions with industry experts.
+Date: March 05-07, 2026.
 
-### **Professional Body Chapters**
-The university hosts student chapters of globally recognized professional organizations, including:
-* **Technical:** IEEE (Electronics), ACM (Computing), CSI (Computer Society), ISTE.
-* **Mechanical/Quality:** ASME, ASQ, SAE (Automobile Engineers), ASHRAE.
-* **General Engineering:** IEI (Institute of Engineers).
+Wonder of Words (WoW): Annual literary fest featuring globally renowned figures 
+in literature, art, and cinema.
+Notable past guests: Javed Akhtar (Poet/Lyricist), Manisha Kulshreshtha (Novelist).
+Key event: Jashn-e-Alfaz, a closing poetic session showcasing national talent.
 
----
+JU Reminiscence: Annual alumni reunion event.
+Engineer's Day: Celebrated annually on campus.
+Freshers Eve: Welcome event for new students every year.
 
-## **Campus Location**
-* **Address:** Plot No. IS-2036 to 2039, Ramchandrapura Industrial Area, Vidhani, Sitapura Extension, Jaipur – 303905, Rajasthan, India.
+## Sports and Recreation
+
+Sports area: 35,000 sqm dedicated sports facility.
+Outdoor sports: Football, Basketball, Volleyball, American Football (Tackle and Flag), 
+Cricket, Kabaddi.
+Indoor sports: Table Tennis, Badminton, Chess.
+Gymnasium: Fully equipped modern workout facility for students.
+Coaching: Professional NIS certified coaches available morning and evening.
+JECRC is a member of Association of Indian Universities (AIU).
+Student teams represent university in national and international tournaments.
+
+JU VERVE: Annual Inter-University National Sports Fest.
+1,500+ participants from across the country.
+Cash prizes worth Rs. 2.25 lakh for winners.
+Sports: American Football, Basketball, Cricket, Football, Chess, 
+Table Tennis, Volleyball, Kabaddi, CSGO, FIFA, VALORANT, BGMI, NFS.
+
+Recent Achievements (2023-24):
+Gold Medals: Basketball (Girls) at Athlon and Vanquish; Football at Arya Cup; 
+Volleyball (Boys) at Vanquish.
+National Level: Bronze in Valorant (Men) at AIU Championship.
+Taekwondo National Championship 2023: Bronze Medal.
+State Shooting Championship 2023: Gold Medal in 10m Air Pistol.
+
+## Student Clubs and Societies
+
+Professional Body Chapters:
+IEEE (Electronics and Electrical Engineers).
+ACM (Association for Computing Machinery).
+CSI (Computer Society of India).
+ISTE (Indian Society for Technical Education).
+ASME (Mechanical Engineers).
+ASQ (Quality professionals).
+SAE (Automobile Engineers).
+ASHRAE (Heating, Refrigerating, Air-Conditioning Engineers).
+IEI (Institute of Engineers India).
+
+Technical Communities:
+Xe-Tech Club (Technology and innovation).
+AI-ML Community (Artificial Intelligence and Machine Learning).
+Coding Ecosystem at JU (Competitive programming and coding).
+
+Cultural Clubs: Drama, music, dance, art, and technology clubs available.
+
+## Student Council (Super 60)
+
+60 student leaders selected from 5,000+ applicants every year.
+Five verticals: General Affairs, Cultural, Sports, Technical, Media.
+
+Social initiatives:
+Abhydayaa: Education and welfare for underprivileged children. 
+1.2 million+ children impacted.
+Zarurat: Community service with 475+ volunteers active for 20+ years.
+Aashayein: Student welfare initiative.
+Sparsh: On-campus creche for children aged 6 months to 4 years.
+
+## Campus Facilities
+
+Food Court: 18,000 sq. ft. fully air-conditioned cafeteria.
+Popular outlets: Dominos, Burger Singh, Moti Mahal, Chai Garam, Divine Dosa.
+
+Students Mess: Double-storied complex offering multi-cuisine food.
+Centrally air-conditioned dining area with cafeteria and convenience stores.
+
+Health and Wellness:
+24/7 on-campus medical facility for minor illnesses and emergencies.
+24-hour ambulance service stationed at hostel premises.
+Regular health screenings and vaccination drives.
+Free mental health counseling via collaboration with Aditya Birla Education Trust.
+Mpower Cell: Free confidential mental health counseling and resilience workshops.
+
+## Innovation and Entrepreneurship
+
+Makerspace: Rajasthan's first student-driven innovation hub.
+Facilities: 3D printing, robotics, AI, IoT, drone technology.
+
+JECRC Incubation Centre (JIC):
+90+ startups supported.
+1,100+ jobs generated.
+Rs. 30+ crore in government grants secured.
+Annual Accelerator Programs for student startups.
+Mentor India Academy by AIM Niti Aayog.
+
+## Foreign Languages Centre
+
+Languages offered: French, German, Japanese.
+Levels: Beginner to Intermediate.
+Fee for JECRC students: Rs. 6,500 to Rs. 25,000.
+Contact: 9001348520.
+
+## Alumni Network
+
+7,900+ global alumni.
+Alumni portal: www.jualumni.in.
+50+ alumni-founded startups.
+Annual alumni reunion: JU Reminiscence.
+
+## Campus Address
+
+Plot No. IS-2036 to 2039, Ramchandrapura Industrial Area, 
+Vidhani, Sitapura Extension, Jaipur-303905, Rajasthan, India.

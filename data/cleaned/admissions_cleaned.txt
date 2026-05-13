@@ -1,37 +1,109 @@
-### B.Tech Admission Eligibility & Scholarship Guidelines
+## Admission Dates and Process (2026)
 
-#### Admission Eligibility (B.Tech)
-* **Academic Requirement:** Minimum **60% aggregate** in 10+2 (Senior Secondary).
-* **Mandatory Subjects:** English, Physics, and Mathematics.
-* **Optional Subjects (One of):** Chemistry, Biology, Biotechnology, or a Technical Vocational subject.
-* **Selection Preference:** Valid **JEE (Main)** scores are prioritized.
-* **Category Relaxations:** A **5% relaxation** (55% minimum) is granted to SC, ST, Rajasthan OBC (Non-creamy layer), and Women candidates.
+Admissions for 2026 are open now. Apply online at jecrcuniversity.edu.in.
+Application deadline: typically August 31, 2026 (may extend per UGC guidelines).
+Admission cycle opens post-board results (March/April) and closes late August.
+No entrance exam conducted by JECRC. JEE Main scores preferred but not mandatory.
+Direct admission possible based on Class 12th merit (60% aggregate in PCM) if JEE score is low.
+Management quota available for seats beyond merit and JEE criteria.
 
----
+## Documents Required for Admission
 
-#### Scholarship Schemes
-Scholarships apply to the **Tuition Fee** only. Students can only avail of one scholarship at a time (highest applicable).
+10th marksheet and certificate.
+12th marksheet and certificate.
+JEE Main scorecard (if available).
+Transfer certificate.
+Character certificate.
+Aadhaar card or valid ID proof.
+4 to 6 passport size photographs.
+Category certificate (if applicable for SC/ST/OBC/Women).
+Migration certificate.
+Originals plus photocopies required at the time of document verification.
 
-| Scholarship Type | Criteria (10+2 Aggregate) | Applicable Programs | Amount |
-| :--- | :--- | :--- | :--- |
-| **Merit Scholarship** | 70% to 84.99% | All UG Programs | 15% |
-| **Merit Scholarship** | 85% and Above | All UG Programs | 25% |
-| **Additional Category** | NCC 'A', Alumni, Sibling, Single Mother/Girl, Sports Medalist, etc. | All Programs | 10% (One-time) |
+## Lateral Entry (Direct 2nd Year Admission)
 
----
+Eligible with AICTE-approved diploma (minimum 60% in relevant branch).
+Also eligible with B.Sc. degree (minimum 60%) with Mathematics in 10+2.
+5% relaxation for SC, ST, OBC, and Women candidates.
+Available for branches including CSE and ECE.
 
-#### Scholarship Maintenance & Continuation
-To retain a scholarship in subsequent years, students must strictly adhere to the following:
-* **Academic Performance:** Maintain a minimum **8.0 CGPA** (SGPA in the 1st semester).
-* **Attendance:** Minimum **75% attendance** in every individual subject (Theory/Lab/Project).
-* **Clean Record:** No "compartments" (failed subjects) and no disciplinary actions/punishments.
-* **Review Cycle:** Scholarships are reviewed annually at the end of even semesters.
+## NRI and Foreign Student Admissions
 
-> **Important Note on Restoration:** If a scholarship is withdrawn due to low grades or attendance, it may be restored after the next review cycle if the student meets the 8.0 CGPA and 75% attendance criteria. However, if withdrawn for **indiscipline**, it will never be restored.
+Separate process via NRI quota.
+Apply online with equivalent eligibility documents, passport, and visa proofs.
+Contact admissions office for specific requirements: admission@jecrcu.edu.in.
 
----
+## Hostel Application at Admission
 
-#### Key Restrictions
-* **No Rounding Off:** A CGPA of 7.99 or attendance of 75% (if the requirement is >75%) will result in immediate forfeiture.
-* **No External Aid:** Students receiving financial assistance from the Government or private organizations are ineligible for JECRC scholarships.
-* **Discretion:** The University reserves the right to discontinue scholarship schemes or make final awarding decisions.
+Apply for hostel simultaneously during main admission process.
+Requires same documents as admission plus a hostel-specific form.
+No guarantee of hostel seat. Allotted on first-come first-served basis.
+
+## B.Tech Admission Eligibility
+
+Minimum 60% aggregate marks in 10+2 (Senior Secondary).
+Mandatory subjects: English, Physics, and Mathematics.
+Optional subject (one of): Chemistry, Biology, Biotechnology, or Technical Vocational subject.
+JEE (Main) scores are prioritized for selection.
+Category relaxation: 5% relaxation (55% minimum) for SC, ST, Rajasthan OBC (Non-creamy layer), and Women candidates.
+
+## Admission Process
+
+Step 1: Visit jecrcuniversity.edu.in and fill the online application form.
+Step 2: An admissions representative will contact you to complete the process.
+Step 3: Confirm your schedule and admission after connecting with the representative.
+Contact for admissions: admission@jecrcu.edu.in. Phone: 9116642285. Toll-free: 1800-120-5616.
+Director of Admissions: Mr. Manish Sharma. Email: director.admission@jecrcu.edu.in.
+
+## Fee Structure (2026-2027)
+
+Annual tuition fee: Rs. 2,75,000.
+First semester fee: Rs. 1,47,500.
+One-time admission fee: Rs. 10,000 (non-refundable).
+GST charged extra as applicable.
+
+## Scholarship Schemes (Based on 10+2 Marks)
+
+Scholarships apply to Tuition Fee only. Only one scholarship awarded at a time (highest applicable).
+
+70% to 84.99% aggregate in 10+2: 15% tuition fee waiver. Applicable to all UG programs.
+85% and above aggregate in 10+2: 25% tuition fee waiver. Applicable to all UG programs.
+JEE (Main) 2026 Percentile 75 to 89.99 (General Category): 15% tuition fee waiver. Applicable to all B.Tech programs.
+JEE (Main) 2026 Percentile above 90 (General Category): 25% tuition fee waiver. Applicable to all B.Tech programs.
+CAT 2025 Percentile 40 to 59.99: 15% tuition fee waiver. Applicable to MBA programs.
+CAT 2025 Percentile above 60: 25% tuition fee waiver. Applicable to MBA programs.
+
+## Additional Scholarship (10% one-time)
+
+Available for: NCC A Certificate holders, Alumni children, Siblings of current students, JU Employee children, Single Mother, Single Girl Child, War Widow, Father from Ex-Services or Para-Military killed in action, Sports Medalist at minimum State level tournament recognized by Indian Olympic Association.
+Only one additional scholarship given at a time.
+
+## Scholarship Continuation Requirements
+
+Minimum 8.0 CGPA (SGPA in 1st semester) every year.
+Minimum 75% attendance in every individual subject (Theory, Lab, Project, Seminar).
+No compartments (failed subjects) in any semester.
+No disciplinary actions or punishments.
+Scholarship reviewed annually at end of even semester.
+
+## Scholarship Restoration Policy
+
+If withdrawn due to low CGPA or attendance: may be restored after next review if criteria met.
+If withdrawn due to indiscipline: never restored under any circumstances.
+CGPA of 7.99 or below results in immediate forfeiture. No rounding off.
+Attendance of exactly 75% or below also results in forfeiture.
+
+## Scholarship Restrictions
+
+Students receiving financial assistance from Government or private organizations are not eligible.
+University reserves the right to discontinue scholarship schemes at its discretion.
+Final scholarship awarding decision rests with appropriate university bodies.
+
+## Chairperson Fellowship
+
+Available for students from EWS, OBC-NC, SC, ST categories.
+Family income must be below Rs. 3 lakhs per year.
+Scholarship amount: 15% of tuition fee.
+Maximum 50 fellowships awarded per year.
+
+Students without JEE scores can also apply directly based on 10+2 merit.
