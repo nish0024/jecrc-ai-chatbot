@@ -39,10 +39,13 @@ function cleanResults(results) {
     .sort((a, b) => b.score - a.score)
     .map(r => r.text)
     .filter(line =>
-      line.length > 40 &&
-      line.length < 220 &&
-      !line.includes("|") &&
-      !line.includes("##")
+      line.length > 20 &&
+      line.length < 300 &&
+      !line.includes("Note: This calendar") &&
+      !line.includes("Always verify") &&
+      !line.includes("For department HOD") &&
+      !line.includes("For placements contact") &&
+      !line.includes("Results are declared on the student portal")
     );
 }
 
@@ -50,7 +53,7 @@ async function getAnswer(query) {
   const queryWords = query.toLowerCase().split(" ");
   const results = searchFiles(queryWords);
   const unique = [...new Set(cleanResults(results))];
-  const topResults = unique.slice(0, 5);
+  const topResults = unique.slice(0, 8);
 
   console.log('Query:', query);
   console.log('Results found:', topResults.length);
