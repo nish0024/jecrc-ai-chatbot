@@ -76,10 +76,14 @@ async function getAnswer(query) {
 
   const context = topResults.join('\n');
 
-  const prompt = `You are JECRC GPT, a helpful assistant for JECRC University students.
-  
-Using ONLY the information below, answer the student's question in a friendly and clear way.
-If the information doesn't fully answer the question, say so honestly.
+const prompt = `You are JECRC GPT, a helpful assistant for JECRC University students.
+
+Using ONLY the information below, answer the student's question.
+Important rules:
+- If the information contains company names, list ALL of them exactly as written
+- Do not summarize or shorten any lists
+- Be friendly and clear
+- If information is insufficient, say so honestly
 
 Information:
 ${context}
