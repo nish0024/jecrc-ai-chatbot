@@ -114,47 +114,37 @@ function injectCSS() {
 }
 
 /* ─────────────────────────────────────────────
-   JECRC LOGO SVG  (traced from provided image)
+   JECRC LOGO PNG (Full width logo)
 ───────────────────────────────────────────── */
 function JECRCLogo({ size = 36 }) {
   return (
-    <svg width={size * 2.6} height={size} viewBox="0 0 120 46" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display:"block" }}>
-      {/* Shield */}
-      <rect x="0" y="0" width="38" height="46" rx="3" fill="#C8102E"/>
-      {/* Shield outline symbol — simplified crest */}
-      <path d="M19 5 L31 10 L31 26 Q31 36 19 41 Q7 36 7 26 L7 10 Z" fill="none" stroke="white" strokeWidth="1.2"/>
-      {/* Book icon */}
-      <rect x="12" y="19" width="14" height="9" rx="1" fill="none" stroke="white" strokeWidth="1"/>
-      <line x1="19" y1="19" x2="19" y2="28" stroke="white" strokeWidth="0.8"/>
-      {/* Laurel dots */}
-      <circle cx="10" cy="15" r="1" fill="white"/>
-      <circle cx="28" cy="15" r="1" fill="white"/>
-      <circle cx="9"  cy="23" r="1" fill="white"/>
-      <circle cx="29" cy="23" r="1" fill="white"/>
-      {/* Flame / torch top */}
-      <path d="M19 7 Q21 10 19 12 Q17 10 19 7Z" fill="white"/>
-
-      {/* Wordmark */}
-      <text x="44" y="20" fontFamily="'DM Serif Display',Georgia,serif" fontSize="16" fontWeight="400" fill="currentColor" letterSpacing="1.5">JECRC</text>
-      <text x="44" y="32" fontFamily="'DM Sans',system-ui,sans-serif" fontSize="8.5" fontWeight="500" fill="currentColor" letterSpacing="3.5">UNIVERSITY</text>
-      <text x="44" y="42" fontFamily="'DM Sans',system-ui,sans-serif" fontSize="6" fontWeight="400" fill="var(--ink3)" letterSpacing="1.8">BUILD YOUR WORLD</text>
-    </svg>
+    <img 
+      src="/jecrc-logo.png" 
+      alt="JECRC University" 
+      style={{
+        height: size,
+        width: "auto",
+        display: "block"
+      }}
+    />
   );
 }
 
+/* ─────────────────────────────────────────────
+   JECRC LOGO MARK (Shield only, for compact use)
+───────────────────────────────────────────── */
 function JECRCMark({ size = 32 }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 38 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="38" height="46" rx="4" fill="#C8102E"/>
-      <path d="M19 5 L31 10 L31 26 Q31 36 19 41 Q7 36 7 26 L7 10 Z" fill="none" stroke="white" strokeWidth="1.4"/>
-      <rect x="12" y="19" width="14" height="9" rx="1" fill="none" stroke="white" strokeWidth="1.1"/>
-      <line x1="19" y1="19" x2="19" y2="28" stroke="white" strokeWidth="0.9"/>
-      <circle cx="10" cy="15" r="1.1" fill="white"/>
-      <circle cx="28" cy="15" r="1.1" fill="white"/>
-      <circle cx="9"  cy="23" r="1.1" fill="white"/>
-      <circle cx="29" cy="23" r="1.1" fill="white"/>
-      <path d="M19 7 Q21 10 19 12 Q17 10 19 7Z" fill="white"/>
-    </svg>
+    <img 
+      src="/jecrc-logo.png" 
+      alt="JECRC" 
+      style={{
+        height: size,
+        width: size,
+        display: "block",
+        objectFit: "contain"
+      }}
+    />
   );
 }
 
@@ -235,13 +225,17 @@ function BotAvatarSmall() {
       width: 32, height: 32, borderRadius: 8, flexShrink: 0,
       background: "#C8102E", display: "flex", alignItems: "center", justifyContent: "center",
       boxShadow: "0 3px 10px rgba(200,16,46,.30)",
+      overflow: "hidden",
     }}>
-      <svg width="18" height="20" viewBox="0 0 38 46" fill="none">
-        <path d="M19 2 L33 8 L33 27 Q33 38 19 44 Q5 38 5 27 L5 8 Z" fill="none" stroke="white" strokeWidth="1.8"/>
-        <rect x="12" y="20" width="14" height="9" rx="1" fill="none" stroke="white" strokeWidth="1.2"/>
-        <line x1="19" y1="20" x2="19" y2="29" stroke="white" strokeWidth="1"/>
-        <path d="M19 6 Q21.5 10 19 13 Q16.5 10 19 6Z" fill="white"/>
-      </svg>
+      <img 
+        src="/jecrc-logo.png" 
+        alt="JECRC" 
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover"
+        }}
+      />
     </div>
   );
 }
@@ -442,21 +436,23 @@ function EmptyHero({ onChip, loading }) {
       alignItems: "center", justifyContent: "center",
       padding: "32px 24px 24px", textAlign: "center",
     }}>
-      {/* Decorative shield */}
+      {/* Decorative logo */}
       <div style={{
-        width: 80, height: 80, borderRadius: 22,
+        width: 120, height: 120, borderRadius: 22,
         background: "linear-gradient(145deg, #C8102E 0%, #8E0B1F 100%)",
         display: "flex", alignItems: "center", justifyContent: "center",
         marginBottom: 24, boxShadow: "0 16px 48px rgba(200,16,46,.3), 0 4px 12px rgba(200,16,46,.15)",
+        overflow: "hidden", padding: 10,
       }}>
-        <svg width="42" height="50" viewBox="0 0 38 46" fill="none">
-          <path d="M19 3 L33 9 L33 27 Q33 38 19 44 Q5 38 5 27 L5 9 Z" fill="none" stroke="white" strokeWidth="1.8"/>
-          <rect x="12" y="20" width="14" height="9" rx="1.5" fill="none" stroke="white" strokeWidth="1.3"/>
-          <line x1="19" y1="20" x2="19" y2="29" stroke="white" strokeWidth="1.1"/>
-          <path d="M19 6 Q22 10 19 14 Q16 10 19 6Z" fill="white"/>
-          <circle cx="9" cy="16" r="1.2" fill="white"/>
-          <circle cx="29" cy="16" r="1.2" fill="white"/>
-        </svg>
+        <img 
+          src="/jecrc-logo.png" 
+          alt="JECRC University" 
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "contain"
+          }}
+        />
       </div>
 
       <h1 style={{
@@ -540,7 +536,17 @@ function AboutPage() {
         <svg style={{ position:"absolute", right:0, top:0, opacity:.08 }} width="200" height="140" viewBox="0 0 200 140">
           {[0,1,2,3,4,5,6,7].map(i => <line key={i} x1={i*30-40} y1="0" x2={i*30+80} y2="140" stroke="white" strokeWidth="1.5"/>)}
         </svg>
-        <JECRCLogo size={28} />
+        <div style={{ width: 100, height: 40 }}>
+          <img 
+            src="/jecrc-logo.png" 
+            alt="JECRC University" 
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "contain"
+            }}
+          />
+        </div>
         <p style={{
           fontFamily: "var(--font-display)", fontSize: 22, fontWeight: 400,
           color: "white", marginTop: 16, marginBottom: 8, lineHeight: 1.3,
