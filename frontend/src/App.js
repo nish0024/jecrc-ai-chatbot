@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback, useMemo } from "react";
 
 /* ─────────────────────────────────────────────
    GLOBAL CSS INJECTION
@@ -807,8 +807,8 @@ export default function App() {
 
   // active session
   const activeSession = sessions.find(s => s.id === activeId) ?? sessions[0];
-  const msgs = activeSession?.messages ?? [];
-  const hasConvo = Boolean(msgs.length);
+ const msgs = useMemo(() => activeSession?.messages ?? [], [activeSession]);
+ const hasConvo = Boolean(msgs.length);
 
   // theme
   useEffect(() => {
@@ -856,7 +856,7 @@ export default function App() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query: val }),
       });
-      if (!res.ok) throw { type: "server", message: `Server error (${res.status})` };
+      if (!res.ok) throw new Error(`Server error (${res.status})`);
       const data = await res.json();
       const botMsg = {
         id: uid + 1, role: "bot", ts: new Date(),
@@ -865,14 +865,14 @@ export default function App() {
       updateSession(activeId, s => ({ messages: [...s.messages, botMsg] }));
       setJustSent(true);
       setTimeout(() => setJustSent(false), 1400);
-    } catch (error) {
-      updateSession(activeId, s => ({
-        messages: [...s.messages, {
-          id: uid + 1, role: "bot", isError: true, ts: new Date(),
-          text: error.type ? `❌ ${error.message}` : "⚠️ Connection error — please check your network and try again.",
-        }]
-      }));
-    } finally {
+  } catch (error) {
+  updateSession(activeId, s => ({
+    messages: [...s.messages, {
+      id: uid + 1, role: "bot", isError: true, ts: new Date(),
+      text: error.message?.includes("Server error") ? `❌ ${error.message}` : "⚠️ Connection error — please check your network and try again.",
+    }]
+  }));
+} finally {
       setLoading(false);
     }
   }, [q, loading, activeId]);
