@@ -19,14 +19,25 @@ function searchFiles(queryWords) {
     const data = fs.readFileSync(filePath, 'utf-8');
     const lines = data.split('\n');
 
-    lines.forEach(line => {
+    lines.forEach((line, index) => {
       const lowerLine = line.toLowerCase();
+
       const score = queryWords.filter(word =>
         lowerLine.includes(word)
       ).length;
 
-      if (score > 0) {
-        results.push({ text: line.trim(), score });
+      if (score > 0 && line.trim().length > 20) {
+        // Include this line plus the next 3 lines for context
+        const contextLines = lines
+          .slice(index, index + 4)
+          .map(l => l.trim())
+          .filter(l => l.length > 0)
+          .join(' ');
+
+        results.push({
+          text: contextLines,
+          score
+        });
       }
     });
   });
