@@ -6,13 +6,63 @@ require('dotenv').config({ path: path.join(__dirname, '../.env') });
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const folderPath = path.join(__dirname, '../data/cleaned');
 
+// ── Stop words — don't use these as search keywords ─────────
+const STOP_WORDS = new Set([
+  'a','an','the','is','are','was','were','be','been','being',
+  'have','has','had','do','does','did','will','would','could',
+  'should','may','might','shall','can','need','dare','ought',
+  'used','to','of','in','on','at','by','for','with','about',
+  'against','between','into','through','during','before','after',
+  'above','below','from','up','down','out','off','over','under',
+  'again','further','then','once','what','which','who','whom',
+  'this','that','these','those','am','i','me','my','myself','we',
+  'our','you','your','he','she','it','they','them','his','her',
+  'its','and','but','or','nor','so','yet','both','either',
+  'neither','not','no','tell','give','show','know','want','get',
+  'how','much','many','any','all','most','other','more','also',
+  'just','than','too','very','please','hi','hello','hey'
+]);
+
+// ── Synonym map — expands query terms ───────────────────────
+const SYNONYMS = {
+  'fees':        ['fee', 'cost', 'charges', 'price', 'amount', 'payment'],
+  'fee':         ['fees', 'cost', 'charges', 'price', 'amount'],
+  'hostel':      ['dormitory', 'accommodation', 'residence', 'pg', 'room'],
+  'btech':       ['b.tech', 'b tech', 'bachelor of technology', 'engineering'],
+  'b.tech':      ['btech', 'b tech', 'bachelor of technology', 'engineering'],
+  'mba':         ['master of business', 'management', 'pgdm'],
+  'scholarship': ['scholarships', 'financial aid', 'merit', 'waiver', 'discount'],
+  'placement':   ['placements', 'job', 'jobs', 'recruit', 'recruiters', 'hiring', 'campus drive', 'package', 'lpa'],
+  'recruiter':   ['recruiters', 'companies', 'placement', 'hiring', 'employer'],
+  'admission':   ['admissions', 'apply', 'application', 'enroll', 'enrollment', 'join', 'eligibility'],
+  'exam':        ['exams', 'examination', 'test', 'mid term', 'midterm', 'end term'],
+  'club':        ['clubs', 'society', 'societies', 'activity', 'activities', 'cultural'],
+  'campus':      ['college', 'university', 'infrastructure', 'facilities', 'campus life'],
+  'contact':     ['contacts', 'helpdesk', 'phone', 'email', 'number', 'reach'],
+  'calendar':    ['schedule', 'dates', 'academic calendar', 'semester dates', 'holiday'],
+};
+
+// ── Read all cleaned files ───────────────────────────────────
 function getCleanedFiles() {
-  return fs.readdirSync(folderPath);
+  return fs.readdirSync(folderPath).filter(f => f.endsWith('.txt'));
 }
 
+// ── Expand query with synonyms ───────────────────────────────
+function expandQuery(queryWords) {
+  const expanded = new Set(queryWords);
+  queryWords.forEach(word => {
+    if (SYNONYMS[word]) {
+      SYNONYMS[word].forEach(syn => expanded.add(syn));
+    }
+  });
+  return [...expanded];
+}
+
+// ── Search all files ─────────────────────────────────────────
 function searchFiles(queryWords) {
-  let results = [];
+  const results = [];
   const files = getCleanedFiles();
+  const expandedWords = expandQuery(queryWords);
 
   files.forEach(file => {
     const filePath = path.join(folderPath, file);
@@ -22,22 +72,19 @@ function searchFiles(queryWords) {
     lines.forEach((line, index) => {
       const lowerLine = line.toLowerCase();
 
-      const score = queryWords.filter(word =>
-        lowerLine.includes(word)
+      const score = expandedWords.filter(word =>
+        word.length > 1 && lowerLine.includes(word)
       ).length;
 
       if (score > 0 && line.trim().length > 20) {
-        // Include this line plus the next 3 lines for context
+        // Grab next 4 lines for context
         const contextLines = lines
-          .slice(index, index + 4)
+          .slice(index, index + 5)
           .map(l => l.trim())
           .filter(l => l.length > 0)
           .join(' ');
 
-        results.push({
-          text: contextLines,
-          score
-        });
+        results.push({ text: contextLines, score, source: file });
       }
     });
   });
@@ -45,217 +92,174 @@ function searchFiles(queryWords) {
   return results;
 }
 
+// ── Noise lines to filter out ────────────────────────────────
+const NOISE_PATTERNS = [
+  'note: this calendar',
+  'always verify',
+  'for department hod',
+  'for placements contact',
+  'results are declared on the student portal',
+  'last updated',
+  'page |',
+  '---',
+  'source:',
+  'disclaimer',
+];
+
+function isNoiseLine(text) {
+  const lower = text.toLowerCase();
+  return NOISE_PATTERNS.some(p => lower.includes(p));
+}
+
+// ── Clean and deduplicate results ────────────────────────────
 function cleanResults(results) {
+  const seen = new Set();
+
   return results
     .sort((a, b) => b.score - a.score)
     .map(r => r.text)
-    .filter(line =>
-      line.length > 20 &&
-      line.length < 300 &&
-      !line.includes("Note: This calendar") &&
-      !line.includes("Always verify") &&
-      !line.includes("For department HOD") &&
-      !line.includes("For placements contact") &&
-      !line.includes("Results are declared on the student portal")
-    );
+    .filter(line => {
+      if (line.length < 20)    return false;
+      if (isNoiseLine(line))   return false;
+
+      // Deduplicate by first 60 chars
+      const key = line.slice(0, 60).toLowerCase();
+      if (seen.has(key))       return false;
+      seen.add(key);
+
+      return true;
+    });
 }
 
+// ── Simple response cache ────────────────────────────────────
+const cache = new Map();
+const CACHE_TTL = 60 * 60 * 1000; // 1 hour
+
+function getCached(query) {
+  const entry = cache.get(query);
+  if (!entry) return null;
+  if (Date.now() - entry.ts > CACHE_TTL) {
+    cache.delete(query);
+    return null;
+  }
+  return entry.value;
+}
+
+function setCached(query, value) {
+  cache.set(query, { value, ts: Date.now() });
+}
+
+// ── Main function ────────────────────────────────────────────
 async function getAnswer(query) {
-  const queryWords = query.toLowerCase().split(" ");
-  const results = searchFiles(queryWords);
-  const unique = [...new Set(cleanResults(results))];
-  const topResults = unique.slice(0, 8);
+  // Normalize query for cache key
+  const normalizedQuery = query.toLowerCase().trim();
+
+  // Check cache first
+  const cached = getCached(normalizedQuery);
+  if (cached) {
+    console.log('Cache hit:', normalizedQuery);
+    return cached;
+  }
+
+  // Filter stop words, keep meaningful keywords
+  const queryWords = normalizedQuery
+    .split(/[\s,.\-?!]+/)
+    .filter(w => w.length > 1 && !STOP_WORDS.has(w));
 
   console.log('Query:', query);
-  console.log('Results found:', topResults.length);
-  console.log('Top results:', topResults);
+  console.log('Keywords:', queryWords);
 
+  const results = searchFiles(queryWords);
+  const cleaned = cleanResults(results);
+  const topResults = cleaned.slice(0, 10);
+
+  console.log('Results found:', topResults.length);
+
+  // ── Fallback if nothing found ──────────────────────────────
   if (topResults.length === 0) {
-    return ["I currently have limited information on this topic. I'm being updated regularly!"];
+    const fallback = [
+      "Hmm, I don't have specific information on that yet. " +
+      "My knowledge covers admissions, fees, scholarships, hostel, " +
+      "placements, courses, clubs, and academic calendar.\n\n" +
+      "For anything else, reach out directly:\n" +
+      "- Email: admission@jecrcu.edu.in\n" +
+      "- Phone: 1800-120-5616 (toll free)\n" +
+      "- Website: www.jecrcu.edu.in"
+    ];
+    return fallback;
   }
 
   const context = topResults.join('\n');
 
-const prompt = `You are JECRC GPT — an intelligent, friendly, and highly helpful AI assistant for JECRC University, Jaipur.
+  const prompt = `You are JECRC GPT — a friendly, intelligent AI assistant for JECRC University, Jaipur.
 
-You should sound NATURAL, HUMAN, and CONVERSATIONAL — like a smart, supportive friend or senior student helping someone out.
+Your tone: natural, warm, helpful — like a knowledgeable senior student. Not robotic, not corporate.
 
-Your tone should feel similar to ChatGPT:
-- Friendly and easygoing
-- Clear and intelligent
-- Helpful without sounding overly formal
-- Confident but never arrogant
-- Natural conversational flow
-- Sometimes slightly casual if appropriate
-- NEVER robotic or repetitive
+==================================================
+CRITICAL RULES — NEVER BREAK THESE
+==================================================
 
-YOUR JOB:
-Help students, parents, and applicants with accurate information related to JECRC University.
+1. NEVER invent facts, fees, statistics, names, or contacts not in the knowledge base.
+2. NEVER use markdown: no **, no ##, no *, no ###. Use "-" for bullet points only.
+3. IF the context contains a list (companies, clubs, courses, etc.) reproduce ALL items — do not summarize or cut the list short.
+4. If information is missing, say so honestly and direct to official contact.
+5. PLAIN TEXT ONLY. Clean spacing. Short paragraphs.
 
 ==================================================
 RESPONSE STYLE
 ==================================================
 
-- Write in plain, natural English
-- Keep answers structured and readable
-- Use short paragraphs
-- Use bullet points when useful
-- Explain things clearly and simply
-- Prioritize usefulness over formality
-- If something is important, emphasize using CAPITAL LETTERS
-- Avoid generic AI phrases
+- Sound like a helpful friend, not a brochure
+- Use short paragraphs and "-" bullet points where useful
+- If something is important, use CAPITALS (not bold)
+- End naturally: suggest related topics the user might want to know
 
-GOOD EXAMPLES:
-- "Yep, JECRC does offer..."
-- "From what I have here..."
-- "You can basically think of it as..."
+GOOD phrases:
+- "So basically..."
 - "The main thing to know is..."
-- "If you're planning for placements, then..."
+- "From what I have here..."
+- "If you're asking about X, then..."
 
 AVOID:
 - "Based on the provided context..."
 - "According to the information given..."
-- "I apologize, but..."
-- Overly corporate or robotic wording
+- "I apologize..."
+- Generic AI filler phrases
 
 ==================================================
-FORMATTING RULES
+FALLBACK BEHAVIOR
 ==================================================
 
-- PLAIN TEXT ONLY
-- Do NOT use markdown symbols like **, ##, *, or ###
-- Use "-" for bullet points
-- Keep spacing clean
-- Keep responses visually readable
-
-==================================================
-INTENT DETECTION
-==================================================
-
-First identify what the user is asking about.
-
-Possible intents include:
-- Admissions
-- Placements
-- Hostel
-- Fees
-- Scholarships
-- Courses
-- Exams
-- Faculty
-- Campus life
-- Events
-- Clubs
-- Attendance
-- Transport
-- Facilities
-- Internship opportunities
-- Academic calendar
-- ERP/LMS issues
-- Contact/helpdesk queries
-
-Adapt your answer style depending on the intent.
-
-Examples:
-- Admissions → step-by-step guidance
-- Placements → practical + career-focused tone
-- Hostel → comfort/facility-focused
-- Campus life → casual and engaging
-- Technical queries → concise and clear
-
-==================================================
-STRICT KNOWLEDGE RULES
-==================================================
-
-- ONLY use information from the knowledge base below
-- NEVER invent facts, statistics, fees, rankings, contacts, or policies
-- NEVER hallucinate
-- NEVER pretend to know something if the context doesn't contain it
-
-If exact details are unavailable:
-- Give whatever partial relevant information IS available
-- Clearly mention what information is missing
-- Then guide the user toward official support
-
-DO NOT completely reject the question if partial information exists.
-
-GOOD EXAMPLE:
-"I could find information about the hostel facilities, but I don't currently have the exact hostel fee structure. I'm still learning and getting updated with more JECRC information every day 😄
-
-For the latest official details, please contact JECRC at admission@jecrcu.edu.in or call 1800-120-5616."
-
-==================================================
-FRIENDLY FALLBACK BEHAVIOR
-==================================================
-
-If the answer is missing or incomplete:
-- Sound HUMAN and HONEST
-- Never abruptly say "I don't know"
-- Never sound like an error message
-
-Instead, say things naturally like:
-- "Looks like I don't have the latest info on that yet."
-- "I'm still being updated with more JECRC knowledge as we speak 😄"
-- "I don't fully have that information right now, but I'm constantly learning new campus info."
-- "Seems like that detail hasn't been added to my knowledge yet."
-
-Then guide the user toward official university support.
-
-The fallback should feel FRIENDLY, MODERN, and SLIGHTLY PLAYFUL — like a real assistant still improving.
-
-==================================================
-RAG OPTIMIZATION RULES
-==================================================
-
-When answering:
-- Prioritize the MOST RELEVANT information
-- Combine related pieces into one smooth answer
-- Ignore duplicate or noisy data
-- If multiple sources repeat the same thing, summarize naturally
-- Ignore navigation/menu junk or unrelated text
-- Focus ONLY on meaningful university-related information
-
-If the context is messy:
-- Extract meaningful facts
-- Reconstruct them into a clean, human response
-
-==================================================
-CONVERSATION BEHAVIOR
-==================================================
-
-- Maintain conversational continuity
-- If the user sounds confused, simplify more
-- If the user asks follow-ups, answer naturally
-- If appropriate, suggest related helpful info
-- End naturally, not robotically
-
-GOOD ENDINGS:
-- "Let me know if you want details about placements too."
-- "I can also help with hostel, fees, or admission process if you want."
-- "Feel free to ask anything else about JECRC."
+If the answer is partially missing:
+- Share what IS available
+- Mention what's missing naturally
+- Guide to: admission@jecrcu.edu.in or 1800-120-5616
 
 ==================================================
 KNOWLEDGE BASE
 ==================================================
 
-\${context}
+${context}
 
 ==================================================
-USER QUESTION
+STUDENT QUESTION
 ==================================================
 
-\${query}
+${query}
 
 ==================================================
-ANSWER
+YOUR ANSWER
 ==================================================`;
-
 
   const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
   const result = await model.generateContent(prompt);
   const response = result.response.text();
+  const answer = [response];
 
-  return [response];
+  // Store in cache
+  setCached(normalizedQuery, answer);
+
+  return answer;
 }
 
 module.exports = { getAnswer };
