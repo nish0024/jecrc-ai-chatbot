@@ -171,7 +171,7 @@ async function getAnswer(query) {
 
   const results = searchFiles(queryWords);
   const cleaned = cleanResults(results);
-  const topResults = cleaned.slice(0, 10);
+  const topResults = cleaned.slice(0, 12);
 
   console.log('Results found:', topResults.length);
 
