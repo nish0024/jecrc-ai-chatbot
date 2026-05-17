@@ -808,7 +808,7 @@ export default function App() {
   // active session
   const activeSession = sessions.find(s => s.id === activeId) ?? sessions[0];
   const msgs = activeSession?.messages ?? [];
-  const hasConvo = msgs.length > 0;
+  const hasConvo = Boolean(msgs.length);
 
   // theme
   useEffect(() => {
@@ -865,11 +865,11 @@ export default function App() {
       updateSession(activeId, s => ({ messages: [...s.messages, botMsg] }));
       setJustSent(true);
       setTimeout(() => setJustSent(false), 1400);
-    } catch (err) {
+    } catch (error) {
       updateSession(activeId, s => ({
         messages: [...s.messages, {
           id: uid + 1, role: "bot", isError: true, ts: new Date(),
-          text: err.type ? `❌ ${err.message}` : "⚠️ Connection error — please check your network and try again.",
+          text: error.type ? `❌ ${error.message}` : "⚠️ Connection error — please check your network and try again.",
         }]
       }));
     } finally {
